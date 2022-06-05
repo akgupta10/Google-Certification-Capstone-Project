@@ -276,7 +276,7 @@ all_trips %>%
            scale_y_continuous(breaks = seq(0, 130, 10)) +
            labs(title = "Distribution of ride length", x = "User Type", y = "Length (min)")
 ```
-#The average ride length by day
+# The average ride length by day
 ```{r}
 all_trips %>%
   group_by(user_type, day) %>%
@@ -298,7 +298,7 @@ ggplot(aes(day, mean, color = user_type)) +
   labs(title = "The average ride length by day", x = "Day", y = "Average (min)")
 ```
 
-#The average ride length by month
+# The average ride length by month
 ```{r}
 all_trips %>% 
   group_by(user_type, month) %>%
@@ -310,7 +310,7 @@ all_trips %>%
   labs(title = "The average ride length by month", x = "Month", y = "Average (min)")
 ```
 
-#The average ride length by days of the week
+# The average ride length by days of the week
 ```{r}
 all_trips %>% 
   group_by(user_type, day_of_Week) %>%
@@ -329,7 +329,7 @@ all_trips %>%
   scale_y_continuous(breaks = seq(0, 28, 2)) +
   labs(title = "The average ride length by days of the week", x = "Days of the week", y = "Average (min)")
 ```
-#The average ride length by hour of the day
+# The average ride length by hour of the day
 ```{r}
 all_trips %>% 
   mutate(hour = hour(start_time)) %>%
@@ -354,7 +354,7 @@ all_trips %>%
 ```
 
 
-#by hour of the day divided by days of the week
+# by hour of the day divided by days of the week
 ```{r}
 all_trips %>% 
   mutate(hour = hour(start_time),
@@ -384,9 +384,9 @@ all_trips %>%
   scale_x_continuous(breaks = seq(0, 23, 1)) +
   labs(title = "The average ride length by hour of the day divided by weekday and weekend", x = "Hour of the day", y = "Average (min)")
 ```
-#3. Analysis of Bike type
+# 3. Analysis of Bike type
 
-#The number of bike type usage
+# The number of bike type usage
 ```{r}
 all_trips %>% 
   group_by(bike_type) %>%
@@ -402,7 +402,7 @@ all_trips %>%
                      breaks = seq(0, 3000000, 1000000)) +
   labs(title = "The number of bike type usages", x = "Bike type", y = "Number of bike usages")
 ```
-#bike type usage by user type
+# bike type usage by user type
 ```{r}
 all_trips %>% 
   group_by(user_type, bike_type) %>%
@@ -420,7 +420,7 @@ all_trips %>%
   geom_col(position = "dodge") +
   labs(title = "The number of bike type usages by user type", x = "User type", y = "Number of bike usages")
 ```
-#bike type and average ride time
+# bike type and average ride time
 ```{r}
 all_trips %>% 
   group_by(bike_type) %>%
@@ -438,7 +438,7 @@ all_trips %>%
   geom_col(position = "dodge") +
   labs(title = "The mean ride length by bike type", y = "Average Ride Length", x = "Bike Type")
 ```
-#bike type and average ride time by user_type
+# bike type and average ride time by user_type
 ```{r}
 all_trips %>% 
   group_by(user_type, bike_type) %>%
@@ -456,9 +456,9 @@ all_trips %>%
   labs(title = "The mean ride length by bike and user type", y = "Average Ride Length", x = "Bike Type")
 ```
 
-#4. Descriptive analysis on the station
+# 4. Descriptive analysis on the station
 
-#Names of Unique Stations
+# Names of Unique Stations
 ```{r}
 stations<- all_trips %>%
   gather(key, station_name, start_station, end_station) %>%
@@ -468,7 +468,7 @@ stations<- all_trips %>%
 ```{r}
 print(paste("Number of stations are", nrow(stations)))
 ```
-#Most Popular stations
+# Most Popular stations
 ```{r}
 pop_stations <- all_trips %>%
   gather(key, station_name, start_station, end_station) %>%
@@ -485,7 +485,7 @@ pop_stations %>%
   geom_col() +
   labs(title = "The top 10 most visited stations", x = "Number of trips", y = "Station name")
 ```
-#Most Popular stations by user type
+# Most Popular stations by user type
 ```{r}
 pu_station <- all_trips %>%
   gather(key, station_name, start_station, end_station) %>%
