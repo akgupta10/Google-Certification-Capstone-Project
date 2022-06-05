@@ -1,4 +1,4 @@
-# Case Study: How does a bike-share navigate speedy success?
+# Case Study: How does a bike-share navigate speedy success?   ![](image.png)
 ## Cyclistic Bike-Share Riders Analysis
 
 ### Summary
