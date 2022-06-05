@@ -12,7 +12,7 @@ The purpose of analysis is to understand how annual members and casual riders us
 ### Data Sources
 Cyclistic’s historical [trip data](https://divvy-tripdata.s3.amazonaws.com/index.html) (last 12 months). The data is usable and is in .csv format. It has clean dates and times, with no outliers. It is relevant to the presented problem. The data has been made available by Motivate International Inc. under [this](https://www.divvybikes.com/data-license-agreement) license. This is public data that you can use to explore how different customer types are using Cyclistic bikes.
 
-### Major Project Activities:
+### Major Project Activities
 - Ask Phase:	Defining the problem, business task, and key stakeholders.
 - Prepare Data:	Complete the process of data collection, required for analysis.
 - Process Data:	Check the data for errors, identify tools to be employed for data cleaning and clean the data for analysis.
@@ -20,7 +20,7 @@ Cyclistic’s historical [trip data](https://divvy-tripdata.s3.amazonaws.com/ind
 - Share Phase:	Prepare data visualization supporting the trends identified using the chosen tool.
 - Act Phase:	Recommendations based on your findings to be shared with the executive team.
 
-### This project does not include:
+### This project does not include
 -	Trip data older than last one year.
 -	Further analysis at individual customer level as Data-privacy issues prohibit using riders’ personally identifiable information.
 -	Implementation of recommendations.
