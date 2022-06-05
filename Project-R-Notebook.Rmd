@@ -3,7 +3,7 @@ title: "Google Capstone Project Notebook"
 output: html_notebook
 ---
 
-#Load Packages
+# Load Packages
 ```{r Loading Packages}
 library(tidyverse) #for data wrangling and visualizations.
 library(lubridate) #for dates and times functions.
@@ -13,22 +13,24 @@ library(skimr)     #for providing summary statistics about variables in data fra
 library(ggplot2)  #helps visualize data
 ```
 
-#Set working Directory
+# Set working Directory
 ```{r Working directory}
-setwd("D:/Study/Online Courses/Coursera/Google Certification/Course 8 Capstone Project/Data_case study 1")
+setwd("D:/--/Data_case study 1")
 ```
+# ===================== \# STEP 1: COLLECT DATA # =====================
 
-#Import CSV files and merge them into a single file
+# Import CSV files and merge them into a single file
 ```{r}
-csv_files <- list.files(path = "D:/Study/Online Courses/Coursera/Google Certification/Course 8 Capstone Project/Data_case study 1/CSV files", recursive = TRUE, full.names=TRUE)
+csv_files <- list.files(path = "D:/--/CSV files", recursive = TRUE, full.names=TRUE)
 all_trips <- do.call(rbind, lapply(csv_files, read.csv))
 ```
 
-#Take a look of data
+# Take a look of data
 ```{r}
 str(all_trips)
 ```
-#Rename columns as per requirement
+
+# Rename columns as per requirement
 ```{r}
 all_trips <- rename(all_trips,
                     trip_id = ride_id,
@@ -42,12 +44,14 @@ all_trips <- rename(all_trips,
                     user_type = member_casual)
 str(all_trips)
 ```
-#Take a backup before starting cleaning process
+
+# Take a backup before starting cleaning process
 ```{r}
 backup_df <- all_trips
 ```
+# ===================== \# STEP 2: CLEAN UP AND ADD DATA TO PREPARE FOR ANALYSIS # =====================
 
-#Finding Duplicates and drop NAs & missing Values
+# Finding Duplicates and drop NAs & missing Values
 ```{r}
 anyDuplicated(all_trips$trip_id)
 original_rows <- nrow(all_trips)
@@ -59,7 +63,7 @@ all_trips <- all_trips[!(all_trips$start_station == "" |
 print(paste("Removed", original_rows - nrow(all_trips), " rows"))
 ```
 
-#broad overview of a data frame
+# broad overview of a data frame
 ```{r}
 skim(all_trips)
 ```
@@ -68,7 +72,7 @@ skim(all_trips)
 summary(all_trips)
 ```
 
-#Times are in character format, convert them to datetime format
+# Times are in character format, convert them to datetime format
 ```{r}
 all_trips$start_time= ymd_hms(all_trips$start_time)
 all_trips$end_time= ymd_hms(all_trips$end_time)
