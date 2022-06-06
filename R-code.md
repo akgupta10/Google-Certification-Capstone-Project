@@ -1,9 +1,5 @@
----
-title: "Google Capstone Project Notebook"
-output: html_notebook
----
 
-# Load Packages
+## Load Packages
 ```{r Loading Packages}
 library(tidyverse) #for data wrangling and visualizations.
 library(lubridate) #for dates and times functions.
@@ -13,24 +9,24 @@ library(skimr)     #for providing summary statistics about variables in data fra
 library(ggplot2)  #helps visualize data
 ```
 
-# Set working Directory
+### Set working Directory
 ```{r Working directory}
 setwd("D:/--/Data_case study 1")
 ```
-# ===================== \# STEP 1: COLLECT DATA # =====================
+## ===================== \# STEP 1: COLLECT DATA # =====================
 
-# Import CSV files and merge them into a single file
+## Import CSV files and merge them into a single file
 ```{r}
 csv_files <- list.files(path = "D:/--/CSV files", recursive = TRUE, full.names=TRUE)
 all_trips <- do.call(rbind, lapply(csv_files, read.csv))
 ```
 
-# Take a look of data
+## Take a look of data
 ```{r}
 str(all_trips)
 ```
 
-# Rename columns as per requirement
+## Rename columns as per requirement
 ```{r}
 all_trips <- rename(all_trips,
                     trip_id = ride_id,
@@ -45,13 +41,13 @@ all_trips <- rename(all_trips,
 str(all_trips)
 ```
 
-# Take a backup before starting cleaning process
+## Take a backup before starting cleaning process
 ```{r}
 backup_df <- all_trips
 ```
-# ===================== \# STEP 2: CLEAN UP AND ADD DATA TO PREPARE FOR ANALYSIS # =====================
+## ===================== \# STEP 2: CLEAN UP AND ADD DATA TO PREPARE FOR ANALYSIS # =====================
 
-# Finding Duplicates and drop NAs & missing Values
+## Finding Duplicates and drop NAs & missing Values
 ```{r}
 anyDuplicated(all_trips$trip_id)
 original_rows <- nrow(all_trips)
@@ -63,7 +59,7 @@ all_trips <- all_trips[!(all_trips$start_station == "" |
 print(paste("Removed", original_rows - nrow(all_trips), " rows"))
 ```
 
-# broad overview of a data frame
+## broad overview of a data frame
 ```{r}
 skim(all_trips)
 ```
@@ -72,13 +68,13 @@ skim(all_trips)
 summary(all_trips)
 ```
 
-# Times are in character format, convert them to datetime format
+## Times are in character format, convert them to datetime format
 ```{r}
 all_trips$start_time= ymd_hms(all_trips$start_time)
 all_trips$end_time= ymd_hms(all_trips$end_time)
 ```
 
-# Add some new columns to facilitate the analysis
+## Add some new columns to facilitate the analysis
 ```{r}
 #Calculate ride length of all trips
 all_trips$ride_length <- as.double(difftime(all_trips$end_time, all_trips$start_time, units = "mins"))
@@ -90,11 +86,11 @@ all_trips$year <- year(all_trips$date)
 all_trips$day_of_Week <- wday(all_trips$date, label = TRUE)
 ```
 
-# Again take broad view of data
+## Again take broad view of data
 ```{r}
 skim(all_trips)
 ```
-## The ride lengths are also in negative and some values are quite high. Let's take a closer look.
+### The ride lengths are also in negative and some values are quite high. Let's take a closer look.
 ```{r}
 # See sorted ride_length data(first 30 rows) in ascending and descending order
 all_trips %>%
@@ -107,12 +103,12 @@ all_trips %>%
   arrange(ride_length) %>%
   slice(1:30)
 ```
-## Some ride lengths are quite high, it seems they are the testing bikes used at research facilities. Some ride lengths are less than a minute and may be due to lock opening and closing errors. Also, some ride lengths are negative. We have to filter out such data. Let's see the percentile breakage.
+### Some ride lengths are quite high, it seems they are the testing bikes used at research facilities. Some ride lengths are less than a minute and may be due to lock opening and closing errors. Also, some ride lengths are negative. We have to filter out such data. Let's see the percentile breakage.
 ```{r}
 percentiles <- quantile(all_trips$ride_length, probs = seq(0, 1, 0.01), na.rm = TRUE)
 data.frame(percentiles)
 ```
-## The values of 0% is -55 minutes.The difference between values of 1% and 100% is about 55944 minutes (almost 39 days), which is not realistic; while the difference between values of 1% and 99% is about 130 minutes, which makes much more sense. Based on this, in this statistical analysis of ride length, the value of 100% will be considered as outlier. Also, negative values should be dropped.
+### The values of 0% is -55 minutes.The difference between values of 1% and 100% is about 55944 minutes (almost 39 days), which is not realistic; while the difference between values of 1% and 99% is about 130 minutes, which makes much more sense. Based on this, in this statistical analysis of ride length, the value of 100% will be considered as outlier. Also, negative values should be dropped.
 ```{r}
 all_trips <- all_trips[!(all_trips$ride_length <= 1 |
                          all_trips$ride_length >= percentiles[100]),]
@@ -122,17 +118,17 @@ all_trips <- all_trips[!(all_trips$ride_length <= 1 |
 summary(all_trips)
 ```
 
-# Export cleaned data to a csv file
+## Export cleaned data to a csv file
 ```{r}
 write.csv(all_trips, "all_trips_2021.csv")
 ```
-## It seems good to go for analysis part now.
+### It seems good to go for analysis part now.
 
-# ===================== \# STEP 3: CONDUCT DESCRIPTIVE ANALYSIS # =====================
+## ===================== \# STEP 3: CONDUCT DESCRIPTIVE ANALYSIS # =====================
 ## Data Analysis Phase
 
-# 1. Rides distribution
-# By type of user
+## 1. Rides distribution
+## By type of user
 ```{r}
 all_trips %>%
   group_by(user_type) %>%
@@ -142,7 +138,7 @@ all_trips %>%
 all_trips %>%
   ggplot(aes(user_type, fill = user_type)) + geom_bar() + labs(x= "Type of User", y= "Number of rides", title = "Rides Distribution By User Type")
 ```
-# By month
+## By month
 ```{r}
 all_trips %>%
   group_by(user_type, month) %>%
@@ -156,7 +152,7 @@ all_trips %>%
   geom_col(position = "dodge") +
   labs(title = "The number of rides by month", x = "Month", y = "Number of rides")
 ```
-# By day of the month
+## By day of the month
 ```{r}
 all_trips %>%
   group_by(user_type, day) %>%
@@ -179,7 +175,7 @@ all_trips %>%
   labs(title = "The number of rides by day of the month", x = "Day of the month", y = "Number of rides")
 ```
 
-# By day of the week
+## By day of the week
 ```{r}
 all_trips %>%
   group_by(user_type, day_of_Week) %>%
@@ -194,7 +190,7 @@ all_trips %>%
   geom_col(position = "dodge") +
   labs(title = "The number of rides by Weekday", x = "Weekday", y = "Number of rides")
 ```
-# by hour of the day
+## by hour of the day
 ```{r}
 all_trips %>% 
   mutate(hour = hour(start_time)) %>%
@@ -209,7 +205,7 @@ all_trips %>%
   scale_x_continuous(breaks = seq(0, 23, 1)) +
   labs(title = "The number of rides by hour of the day", x = "Hour of the day", y = "Number of rides")
 ```
-# by hour of the day divided by days of the week
+## by hour of the day divided by days of the week
 ```{r}
 all_trips %>% 
   mutate(hour = hour(start_time)) %>%
@@ -225,7 +221,7 @@ all_trips %>%
   labs(title = "The number of rides by hour divided by weekday", x = "Hour of the day", y = "Number of rides") +
   facet_wrap(~ day_of_Week)
 ```
-# plot on same graph to compare weekday and weekends
+## plot on same graph to compare weekday and weekends
 ```{r}
 all_trips %>% 
   mutate(hour = hour(start_time),
@@ -243,7 +239,7 @@ all_trips %>%
   facet_wrap(~ day_type)
 ```
 
-# 2. The summary statistics on the ride length
+## 2. The summary statistics on the ride length
 ```{r}
 #user-defined function for mode
 Mode <- function(x) {
@@ -276,7 +272,7 @@ all_trips %>%
            scale_y_continuous(breaks = seq(0, 130, 10)) +
            labs(title = "Distribution of ride length", x = "User Type", y = "Length (min)")
 ```
-# The average ride length by day
+## The average ride length by day
 ```{r}
 all_trips %>%
   group_by(user_type, day) %>%
@@ -298,7 +294,7 @@ ggplot(aes(day, mean, color = user_type)) +
   labs(title = "The average ride length by day", x = "Day", y = "Average (min)")
 ```
 
-# The average ride length by month
+## The average ride length by month
 ```{r}
 all_trips %>% 
   group_by(user_type, month) %>%
@@ -310,7 +306,7 @@ all_trips %>%
   labs(title = "The average ride length by month", x = "Month", y = "Average (min)")
 ```
 
-# The average ride length by days of the week
+## The average ride length by days of the week
 ```{r}
 all_trips %>% 
   group_by(user_type, day_of_Week) %>%
@@ -329,7 +325,7 @@ all_trips %>%
   scale_y_continuous(breaks = seq(0, 28, 2)) +
   labs(title = "The average ride length by days of the week", x = "Days of the week", y = "Average (min)")
 ```
-# The average ride length by hour of the day
+## The average ride length by hour of the day
 ```{r}
 all_trips %>% 
   mutate(hour = hour(start_time)) %>%
@@ -354,7 +350,7 @@ all_trips %>%
 ```
 
 
-# by hour of the day divided by days of the week
+## by hour of the day divided by days of the week
 ```{r}
 all_trips %>% 
   mutate(hour = hour(start_time),
@@ -384,9 +380,9 @@ all_trips %>%
   scale_x_continuous(breaks = seq(0, 23, 1)) +
   labs(title = "The average ride length by hour of the day divided by weekday and weekend", x = "Hour of the day", y = "Average (min)")
 ```
-# 3. Analysis of Bike type
+## 3. Analysis of Bike type
 
-# The number of bike type usage
+## The number of bike type usage
 ```{r}
 all_trips %>% 
   group_by(bike_type) %>%
@@ -402,7 +398,7 @@ all_trips %>%
                      breaks = seq(0, 3000000, 1000000)) +
   labs(title = "The number of bike type usages", x = "Bike type", y = "Number of bike usages")
 ```
-# bike type usage by user type
+## bike type usage by user type
 ```{r}
 all_trips %>% 
   group_by(user_type, bike_type) %>%
@@ -420,7 +416,7 @@ all_trips %>%
   geom_col(position = "dodge") +
   labs(title = "The number of bike type usages by user type", x = "User type", y = "Number of bike usages")
 ```
-# bike type and average ride time
+## bike type and average ride time
 ```{r}
 all_trips %>% 
   group_by(bike_type) %>%
@@ -438,7 +434,7 @@ all_trips %>%
   geom_col(position = "dodge") +
   labs(title = "The mean ride length by bike type", y = "Average Ride Length", x = "Bike Type")
 ```
-# bike type and average ride time by user_type
+## bike type and average ride time by user_type
 ```{r}
 all_trips %>% 
   group_by(user_type, bike_type) %>%
@@ -456,9 +452,9 @@ all_trips %>%
   labs(title = "The mean ride length by bike and user type", y = "Average Ride Length", x = "Bike Type")
 ```
 
-# 4. Descriptive analysis on the station
+## 4. Descriptive analysis on the station
 
-# Names of Unique Stations
+## Names of Unique Stations
 ```{r}
 stations<- all_trips %>%
   gather(key, station_name, start_station, end_station) %>%
@@ -468,7 +464,7 @@ stations<- all_trips %>%
 ```{r}
 print(paste("Number of stations are", nrow(stations)))
 ```
-# Most Popular stations
+## Most Popular stations
 ```{r}
 pop_stations <- all_trips %>%
   gather(key, station_name, start_station, end_station) %>%
@@ -485,7 +481,7 @@ pop_stations %>%
   geom_col() +
   labs(title = "The top 10 most visited stations", x = "Number of trips", y = "Station name")
 ```
-# Most Popular stations by user type
+## Most Popular stations by user type
 ```{r}
 pu_station <- all_trips %>%
   gather(key, station_name, start_station, end_station) %>%
