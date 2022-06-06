@@ -1,3 +1,4 @@
+***The purpose of this script is to consolidate the analysis to help answer the key question: “In what ways do members and casual riders use Cyclistic bikes differently?”***
 ### Load Packages
 ```{r Loading Packages}
 library(tidyverse) #for data wrangling and visualizations.
