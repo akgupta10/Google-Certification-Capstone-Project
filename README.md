@@ -26,3 +26,5 @@ Cyclistic’s historical [trip data](https://divvy-tripdata.s3.amazonaws.com/ind
 -	Further analysis at individual customer level as Data-privacy issues prohibit using riders’ personally identifiable information.
 -	Implementation of recommendations.
 
+### Tools Used: R and Tableau.
+The complete R code written for this case study can be accessed [here](https://github.com/akgupta10/Google-Certification-Capstone-Project/blob/4e8d60e67df0b7d4b099120f0882ed4854f89224/R-code.md).
