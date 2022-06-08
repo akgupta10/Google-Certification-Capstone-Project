@@ -29,3 +29,5 @@ The **R** code related to this step can be accessed [here](https://github.com/ak
 
 ### 3. Process
 - **Choose Tools:** The combined size of all the 12 datasets is close to 1 GB. Data cleaning in spreadsheet will be time-consuming and slow compared to SQL or R. I am choosing R simply because I could do both data wrangling and analysis even visualizations in the same platform.
+- **Transform the data:** Involves the processes such as data migration, data warehousing, data integration, and data wrangling. <br>
+The **R** code related to this step can be accessed [here.](https://github.com/akgupta10/Google-Certification-Capstone-Project/blob/main/R-code.md#step-2-clean-up-and-add-data-to-prepare-for-analysis)
