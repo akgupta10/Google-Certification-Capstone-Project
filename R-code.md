@@ -243,7 +243,7 @@ all_trips %>%
   facet_wrap(~ day_type)
 ```
 
-## 2. The summary statistics on the ride length
+### 2. The summary statistics on the ride length
 ```{r}
 #user-defined function for mode
 Mode <- function(x) {
@@ -385,7 +385,7 @@ all_trips %>%
   scale_x_continuous(breaks = seq(0, 23, 1)) +
   labs(title = "The average ride length by hour of the day divided by weekday and weekend", x = "Hour of the day", y = "Average (min)")
 ```
-## 3. Analysis of Bike type
+### 3. Analysis of Bike type
 
 ### - The number of bike type usage
 ```{r}
@@ -457,7 +457,7 @@ all_trips %>%
   labs(title = "The mean ride length by bike and user type", y = "Average Ride Length", x = "Bike Type")
 ```
 
-## 4. Descriptive analysis on the station
+### 4. Descriptive analysis on the station
 
 ### - Names of Unique Stations
 ```{r}
