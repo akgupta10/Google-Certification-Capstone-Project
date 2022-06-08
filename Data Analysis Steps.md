@@ -24,10 +24,24 @@ The complete R code written for this case study can be accessed [here](https://g
 - **Data Source:** Cyclistic’s historical [trip data](https://divvy-tripdata.s3.amazonaws.com/index.html) (last 12 months). The data is usable and is in .csv format.
 The data is organized in monthly files. January 2021 to december 2021 data is employed for analysis purpose.
 - **ROCCC:** The data is Reliable, Original, Comprehensive, Current and Cited. The data has been made available by Motivate International Inc. under [this](https://www.divvybikes.com/data-license-agreement) license.
-- **Limitation:** Data-privacy issues prohibit you from using riders’ personally identifiable information. This means that you won’t be able to connect pass purchases to credit card numbers to determine if casual riders live in the Cyclistic service area or if they have purchased multiple single passes.  
+- **Limitation:** Data-privacy issues prohibit you from using riders’ personally identifiable information. This means that you won’t be able to connect pass purchases to credit card numbers to determine if casual riders live in the Cyclistic service area or if they have purchased multiple single passes. 
+ 
 The **R** code related to this step can be accessed [here](https://github.com/akgupta10/Google-Certification-Capstone-Project/blob/main/R-code.md#step-1-collect-data).
 
 ### 3. Process
 - **Choose Tools:** The combined size of all the 12 datasets is close to 1 GB. Data cleaning in spreadsheet will be time-consuming and slow compared to SQL or R. I am choosing R simply because I could do both data wrangling and analysis even visualizations in the same platform.
-- **Transform the data:** Involves the processes such as data migration, data warehousing, data integration, and data wrangling. <br>
-The **R** code related to this step can be accessed [here.](https://github.com/akgupta10/Google-Certification-Capstone-Project/blob/main/R-code.md#step-2-clean-up-and-add-data-to-prepare-for-analysis)
+- **Transform the data:** Involves the processes such as data migration, data warehousing, data integration, and data wrangling.
+- **Check the data for errors** 
+- **Clean the data**
+- **Document the cleaning process** <br>  
+
+The **R** code related to this step can be accessed [here.](https://github.com/akgupta10/Google-Certification-Capstone-Project/blob/main/R-code.md#step-2-clean-up-and-add-data-to-prepare-for-analysis)  
+
+### 4. Analyze
+- Aggregate the data and perform calculations to identify trends and relationships
+  - [Rides distribution](https://github.com/akgupta10/Google-Certification-Capstone-Project/blob/main/R-code.md#1-rides-distribution)
+  - [The summary statistics on the ride length](https://github.com/akgupta10/Google-Certification-Capstone-Project/blob/main/R-code.md#2-the-summary-statistics-on-the-ride-length)
+  - [Analysis of Bike type](https://github.com/akgupta10/Google-Certification-Capstone-Project/blob/main/R-code.md#3-analysis-of-bike-type)
+  - [Descriptive analysis on the station](https://github.com/akgupta10/Google-Certification-Capstone-Project/blob/main/R-code.md#4-descriptive-analysis-on-the-station)
+
+The **R** code related to this step can be accesed [here.](https://github.com/akgupta10/Google-Certification-Capstone-Project/blob/main/R-code.md#step-3-conduct-descriptive-analysis)
