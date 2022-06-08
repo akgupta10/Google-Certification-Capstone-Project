@@ -40,7 +40,7 @@ The complete R code written for this case study can be accessed [here](https://g
 
 #### Detailed Vizualization in Tableau can be accessed here: [Tabealu Viz](https://public.tableau.com/views/CapstoneProjectViz/Dashboard2?:language=en-US&:display_count=n&:origin=viz_share_link) and [Tabealu Story](https://public.tableau.com/views/CyclisticBikes-CaseStudy/CaseStory?:language=en-US&:display_count=n&:origin=viz_share_link)
 
-#### Conclusions/Insights 
+#### 💡 Conclusions/Insights 
   - Casual riders have less rides as compared to members but have higher average ride lengths.
   - Classic bike is the most preferred bike, followed by electric bike.
   - Casual riders prefer to ride on Weekends and around 5 PM in the evening.
