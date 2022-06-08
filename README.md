@@ -1,7 +1,8 @@
 # Case Study: How does a bike-share navigate speedy success?   
 <img width="107" alt="logo" src="https://user-images.githubusercontent.com/98569224/172212218-1bc87981-9b94-4d5e-bd1e-1908c02ff98d.png">  
 
-## Cyclistic Bike-Share Riders Analysis
+## Cyclistic Bike-Share Riders Analysis  
+#### [Scope of Work](https://docs.google.com/document/d/1p84NlKBkxdx4eRQEho3dA7x1J4lrLyPF/edit?usp=sharing&ouid=106826003681178819109&rtpof=true&sd=true)  
 ### Summary
 I am wearing the hat of a junior data analyst working in the marketing analyst team at **Cyclistic** (fictitious name), a bike-share company in Chicago. Cyclistic is a bike-share program that features more than 5,800 bicycles and 600 docking stations. Cyclistic sets itself apart by also offering reclining bikes, hand tricycles, and cargo bikes, making bike-share more inclusive to people with disabilities and riders who can’t use a standard two-wheeled bike. The majority of riders opt for traditional bikes; about 8% of riders use the assistive options. Cyclistic users are more likely to ride for leisure, but about 30% use them to commute to work each day. Customers who purchase single-ride or full-day passes are referred to as casual riders. Customers who purchase annual memberships are Cyclistic members.
 
