@@ -68,5 +68,12 @@ The **R** code related to this step can be accesed [here.](https://github.com/ak
   - Casual riders prefer to ride on Weekends and around 5 PM in the evening.
   - The influx of casual riders is more in third quarter, which shows most of the casual riders are tourists/visitors.
   - The most popular station have more than twice the rides started from it as compared to the second most popular one.
+  
 - **Recommendations**
-  - 
+  - The best time to launch the new marketing campaign are between 15:00 to 19:00, Weekends and Holidays, in the month of June to September. 
+  - The promotion should be focused on Classic Bike. 
+  - A targeted strategy at most popular station will reach the maximum number of Casual riders.
+  - Introduce 2-day or weekly passes to attract more casual riders.
+  - Health benefits of bike riding should be included in promotion.
+
+
