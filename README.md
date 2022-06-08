@@ -20,12 +20,12 @@ The purpose of analysis is to understand how annual members and casual riders us
 Cyclistic’s historical [trip data](https://divvy-tripdata.s3.amazonaws.com/index.html) (last 12 months). The data is usable and is in .csv format. It has clean dates and times, with no outliers. It is relevant to the presented problem. The data has been made available by Motivate International Inc. under [this](https://www.divvybikes.com/data-license-agreement) license. This is public data that you can use to explore how different customer types are using Cyclistic bikes.
 
 ### [Major Project Activities](https://github.com/akgupta10/Google-Certification-Capstone-Project/blob/58670dc2833aad10b136d941dd51cbeb4e2bee4b/Steps.md)
-- **Ask Phase**:	Defining the problem, business task, and key stakeholders.
-- **Prepare Data**:	Complete the process of data collection, required for analysis.
-- **Process Data**:	Check the data for errors, identify tools to be employed for data cleaning and clean the data for analysis.
-- **Analyze Data**:	Aggregate the data and perform calculations to identify trends and relationships.
-- **Share Phase**:	Prepare data visualization supporting the trends identified using the chosen tool.
-- **Act Phase**:	Recommendations based on your findings to be shared with the executive team.
+- **[Ask Phase](https://github.com/akgupta10/Google-Certification-Capstone-Project/blob/main/Data%20Analysis%20Steps.md#1-ask)**:	Defining the problem, business task, and key stakeholders.
+- **[Prepare Data](https://github.com/akgupta10/Google-Certification-Capstone-Project/blob/main/Data%20Analysis%20Steps.md#2-prepare)**:	Complete the process of data collection, required for analysis.
+- **[Process Data](https://github.com/akgupta10/Google-Certification-Capstone-Project/blob/main/Data%20Analysis%20Steps.md#3-process)**:	Check the data for errors, identify tools to be employed for data cleaning and clean the data for analysis.
+- **[Analyze Data](https://github.com/akgupta10/Google-Certification-Capstone-Project/blob/main/Data%20Analysis%20Steps.md#4-analyze)**:	Aggregate the data and perform calculations to identify trends and relationships.
+- **[Share Phase](https://github.com/akgupta10/Google-Certification-Capstone-Project/blob/main/Data%20Analysis%20Steps.md#5-share)**:	Prepare data visualization supporting the trends identified using the chosen tool.
+- **[Act Phase](https://github.com/akgupta10/Google-Certification-Capstone-Project/blob/main/Data%20Analysis%20Steps.md#6-act)**:	Recommendations based on your findings to be shared with the executive team.
 
 ### This project does not include
 -	Trip data older than last one year.
