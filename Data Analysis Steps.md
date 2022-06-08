@@ -45,3 +45,19 @@ The **R** code related to this step can be accessed [here.](https://github.com/a
   - [Descriptive analysis on the station](https://github.com/akgupta10/Google-Certification-Capstone-Project/blob/main/R-code.md#4-descriptive-analysis-on-the-station)
 
 The **R** code related to this step can be accesed [here.](https://github.com/akgupta10/Google-Certification-Capstone-Project/blob/main/R-code.md#step-3-conduct-descriptive-analysis)
+
+### 5. Share
+- **Create effective data visualizations:** Prepare data visualization supporting the trends identified using the chosen tool, Tableau.  
+🎨 **Access complete [Tabealu Viz](https://public.tableau.com/views/CapstoneProjectViz/Dashboard2?:language=en-US&:display_count=n&:origin=viz_share_link)**    
+
+![Dashboard 1](https://user-images.githubusercontent.com/98569224/172636138-1858afef-2ced-411a-aa02-e56d726c7da7.jpg)
+
+![Dashboard 2](https://user-images.githubusercontent.com/98569224/172636534-f2087131-4f71-433a-b7ef-748e34a5f1b0.jpg)
+
+![Dashboard 3](https://user-images.githubusercontent.com/98569224/172636565-eb84b273-04ce-4e8e-90d4-def02e84d1c5.jpg)
+
+![Dashboard 4](https://user-images.githubusercontent.com/98569224/172636601-264e4408-fd8a-4ef3-8f65-2b7f1c310ef6.jpg)
+
+- **Present the findings:** Using Story Points in Tableau  
+🎨 **[Tabealu Story](https://public.tableau.com/views/CyclisticBikes-CaseStudy/CaseStory?:language=en-US&:display_count=n&:origin=viz_share_link)**  
+
