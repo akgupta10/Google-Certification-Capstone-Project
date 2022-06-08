@@ -47,7 +47,7 @@ The complete R code written for this case study can be accessed [here](https://g
   - The influx of casual riders is more in third quarter, which shows most of the casual riders are tourists/visitors.
   - The most popular station have more than twice the rides started from it as compared to the second most popular one.
   
-#### Recommendations
+#### 💡 Recommendations
   - The best time to launch the new marketing campaign are between 15:00 to 19:00, Weekends and Holidays, in the month of June to September. 
   - The promotion should be focused on Classic Bike. 
   - A targeted strategy at most popular station will reach the maximum number of Casual riders.
