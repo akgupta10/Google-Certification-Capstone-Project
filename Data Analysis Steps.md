@@ -61,3 +61,12 @@ The **R** code related to this step can be accesed [here.](https://github.com/ak
 - **Present the findings:** Using Story Points in Tableau  
 🎨 **[Tabealu Story](https://public.tableau.com/views/CyclisticBikes-CaseStudy/CaseStory?:language=en-US&:display_count=n&:origin=viz_share_link)**  
 
+### 6. Act
+- **Conclusions/Insights** gained from the analysis - 
+  - Casual riders have less rides as compared to members but have higher average ride lengths.
+  - Classic bike is the most preferred bike, followed by electric bike.
+  - Casual riders prefer to ride on Weekends and around 5 PM in the evening.
+  - The influx of casual riders is more in third quarter, which shows most of the casual riders are tourists/visitors.
+  - The most popular station have more than twice the rides started from it as compared to the second most popular one.
+- **Recommendations**
+  - 
